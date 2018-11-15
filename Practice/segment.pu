@@ -1,0 +1,42 @@
+@startuml new_component
+title ✨アンナプルナ対応✨
+left to right direction
+cloud "MiniY" {
+  frame "dev01Cluster" {
+      [midgard]
+      [valkyrie]
+      [aam]
+  }
+}
+
+cloud "CIC" {
+  database "DBaaS" {
+    [mysql]
+  }
+}
+
+cloud "Tool" {
+  frame "tool01Cluster" {
+      [midgard-live]
+      [valkyrie-live]
+      [aam-live]
+  }
+}
+[aam-live]
+note right : HTTPS通信可能
+[midgard-live]
+note right : HTTPS通信可能
+
+' セグメント間を繋ぐ
+[midgard] --> [mysql] : HTTP
+[mysql] <-- [midgard-live] : HTTP
+
+' 各セグメント内を繋ぐ
+[midgard] .right.> [aam] : パスワードリセット
+[midgard] -left-> [valkyrie] : APIコール
+
+' 各セグメント内を繋ぐ
+[midgard-live] .right.> [aam-live] : パスワードリセット
+[midgard-live] -left-> [valkyrie-live] : APIコール
+
+@enduml

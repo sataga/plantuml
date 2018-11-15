@@ -1,0 +1,10 @@
+@startuml
+start
+:処理1;
+if (condition) then (label1)
+    :処理2;
+elseif (condigion2) then (label2)
+    :処理3;
+endif
+end
+@enduml

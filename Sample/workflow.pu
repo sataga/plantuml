@@ -1,0 +1,31 @@
+@startuml test_flow
+start
+:処理1;
+note left
+複数行注釈
+複数行注釈
+end note
+fork
+  :並行処理2-1;
+fork again
+  :並行処理2-2;
+end fork
+
+if (何らかの判定) then (yes)
+  :処理3;
+elseif (何らかの別の判定) then (yes)
+  :処理4;
+else (該当なし)
+  :処理5;
+endif
+
+repeat
+  :処理6;
+repeat while (繰り返し判定?)
+
+while (繰り返し判定?) is (ループ必要)
+  :処理7;
+  -> 文字列あり矢印;
+endwhile (ループ不要)
+stop
+@enduml
