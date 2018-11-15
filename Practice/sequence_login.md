@@ -1,5 +1,5 @@
 ```uml
-@startuml
+@start
 activate ユーザ
     opt 会員未登録の場合
         activate 会員登録
@@ -21,5 +21,5 @@ activate ユーザ
             ログイン --> ユーザ :認証失敗のメッセージを表示
         end
     deactivate ログイン
-@enduml
+@end
 ```
