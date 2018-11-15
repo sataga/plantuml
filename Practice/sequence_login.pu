@@ -1,3 +1,4 @@
+```uml
 @startuml
 activate ユーザ
     opt 会員未登録の場合
@@ -21,3 +22,4 @@ activate ユーザ
         end
     deactivate ログイン
 @enduml
+```
