@@ -1,4 +1,4 @@
-```
+```uml
 @startuml
 activate ユーザ
     opt 会員未登録の場合
